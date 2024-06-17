@@ -1,5 +1,23 @@
 ---
+const pageTitle = "About Hellx World";
+const identity = {
+  firstName: "Pedro",
+  country: "España",
+  occupation: "Desarrollador web",
+  hobbies: ["cine", "animación", "arte"],
+};
 
+const skills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Astro",
+  "Redacción de documentos",
+];
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="en">
@@ -8,16 +26,40 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>About Hellx World</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <a href="/">Inicio</a>
     <a href="/about/">Sobre mi</a>
     <a href="/bluagh/">Bluagh</a>
     <h1>About!</h1>
+    <h1>{pageTitle}</h1>
     <p>
       Pues de paso que aprendo Astro creo un blog para vomitar mis opiniones
-      sobre el maravilloso mundo de la programación
+      sobre el "maravilloso" mundo de la programación
     </p>
+    <p>He aquí algunos datos sobre mí:</p>
+    <ul>
+      <li>Nombre: {identity.firstName}</li>
+      <li>País: {identity.country}</li>
+      <li>Ocupación: {identity.occupation}</li>
+      <li>
+        Aficiones:
+        <ul>
+          {identity.hobbies.map((hobby) => <li>{hobby}</li>)}
+        </ul>
+      </li>
+    </ul>
+    {happy && <p>¡Estoy feliz de aprender Astro!</p>}
+
+    {finished && <p>¡He terminado este tutorial!</p>}
+
+    {
+      goal === 3 ? (
+        <p>Mi objetivo es terminar en 3 días.</p>
+      ) : (
+        <p>Mi objetivo no son 3 días.</p>
+      )
+    }
   </body>
 </html>
