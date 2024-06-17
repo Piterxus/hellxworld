@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
 const pageTitle = "About Hellx World";
 const identity = {
   firstName: "Pedro",
@@ -45,9 +46,7 @@ const textCase = "uppercase";
     </style>
   </head>
   <body>
-    <a href="/">Inicio</a>
-    <a href="/about/">Sobre mi</a>
-    <a href="/bluagh/">Bluagh</a>
+    <Navigation />
     <h1>About!</h1>
     <h1>{pageTitle}</h1>
     <p>
