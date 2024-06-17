@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
-import Navigation from "../components/Navigation.astro";
+// import Navigation from "../components/Navigation.astro";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 const pageTitle = "About Hellx World";
 const identity = {
@@ -47,7 +48,8 @@ const textCase = "uppercase";
     </style>
   </head>
   <body>
-    <Navigation />
+    <!-- <Navigation /> -->
+    <Header />
     <h1>About!</h1>
     <h1>{pageTitle}</h1>
     <p>
@@ -82,5 +84,8 @@ const textCase = "uppercase";
       {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
     <Footer />
+    <script>
+      import "../scripts/menu.js";
+    </script>
   </body>
 </html>
